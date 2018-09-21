@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.centered {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.footer {
+  padding-bottom: 15px;
+  text-align: center;
+}

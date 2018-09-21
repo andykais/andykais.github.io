@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 50px;
+}
+
+.timeline {
+  position: sticky;
+  top: 10px;
+  height: fit-content;
+}
+.work {
+  justify-self: flex-end;
+}
+
+.workItem {
+  margin-bottom: 30px;
+}
+
+.title {
+  display: inline;
+  color: var(--black);
+}
+
+.workItem > p {
+  margin: 10px 0;
+}
+
+.stack > span {
+  margin: 0 5px ;
+  font-size: 2em;
+}

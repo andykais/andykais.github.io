@@ -1,0 +1,30 @@
+.projectList {
+  display: grid;
+  grid-template-columns: [left] auto [right] 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  /* grid-template-areas: */
+  /* 'icons title' */
+  /* '.  description'; */
+}
+.projectItem {
+  margin-bottom: 10px;
+}
+.sources {
+  text-align: right;
+  /* grid-area: icons; */
+}
+.title {
+  /* grid-area: title; */
+}
+.description {
+  grid-column-start: right;
+  margin: 5px 0 30px 0;
+  /* margin-bottom: 30px; */
+  /* grid-area: description; */
+}
+.sourceLink {
+  font-size: 2em;
+  margin: 0 5px;
+  color: var(--primary-light);
+}

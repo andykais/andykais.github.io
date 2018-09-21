@@ -1,0 +1,15 @@
+{
+  "plugins": {
+    "libs": [
+      "node"
+    ],
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    },
+    "es_modules": {},
+    "lint": {},
+    "modules": {},
+    "node": {}
+  }
+}

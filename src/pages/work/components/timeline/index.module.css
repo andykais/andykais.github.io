@@ -1,0 +1,10 @@
+.year {
+  margin-bottom: 10px;
+  text-align: right;
+}
+.yearTitle {
+  font-weight: 100;
+}
+.active {
+  font-weight: bold;
+}
