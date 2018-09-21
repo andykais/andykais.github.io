@@ -17,7 +17,7 @@ class Project extends React.PureComponent {
             </a>
           ))}
         </span>
-        <div>
+        <div className={styles.words}>
           <h3 className={styles.title}>
             <Markdown>{title}</Markdown>
           </h3>

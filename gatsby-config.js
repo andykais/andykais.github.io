@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Default Starter',
-  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -22,6 +19,14 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-73032755-1',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Stalemate'],
+        },
       },
     },
   ],

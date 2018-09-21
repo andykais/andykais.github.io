@@ -5,8 +5,8 @@
   --secondary: #f5f5f5;
   --black: black;
   --grey: slategrey;
-  --grey-light: rgba(0,0,0,0.15);
-  --grey-dark: rgba(0,0,0,0.8);
+  --grey-light: rgba(0, 0, 0, 0.15);
+  --grey-dark: rgba(0, 0, 0, 0.8);
 }
 
 html,

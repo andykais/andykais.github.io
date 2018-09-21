@@ -2,6 +2,7 @@
   /* display: inline-block; */
   display:flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .nav > a {
   margin: 10px;
