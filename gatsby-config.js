@@ -15,20 +15,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/images/sword-favicon.png'
-      }
-    }
-    // {
-    // resolve: `gatsby-plugin-direct-import`,
-    // options: {
-    // packages: [
-    // 'react-icons',
-    // {
-    // name: 'react-icons/fa',
-    // indexFile: 'react-icons/sub-package/index.es.js',
-    // },
-    // ],
-    // },
-    // },
+        logo: './src/images/sword-favicon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-73032755-1',
+      },
+    },
   ],
 }
