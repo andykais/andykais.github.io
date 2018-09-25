@@ -18,7 +18,7 @@ class ContentLayout extends React.PureComponent {
         </div>
         <div className={styles.childrenContainer}>
           <div className={styles.children}>{children}</div>
-      </div>
+        </div>
       </SiteLayout>
     )
   }
