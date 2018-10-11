@@ -13,7 +13,7 @@ import {
   Redux,
   Scala,
   SqlServer,
-  PostgresSql,
+  PostgreSql,
   MongoDb,
   ReactiveX,
   MySql,
@@ -32,7 +32,7 @@ const icons = Object.entries({
   'PHP 7': FaPhp,
   Scala,
   'SQL Server': SqlServer,
-  PostgresSQL: PostgresSql,
+  PostgreSQL: PostgreSql,
   MongoDB: MongoDb,
   MySQL: MySql,
 }).reduce(
@@ -88,7 +88,7 @@ export default [
       icons.React,
       icons.Redux,
       icons.RxJS,
-      icons['PostgresSQL'],
+      icons['PostgreSQL'],
     ],
   },
   {
