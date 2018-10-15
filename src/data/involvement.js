@@ -3,7 +3,7 @@ export default [
     title: 'React Boston 2018',
     position: 'Speaker',
     description:
-      'September 29th I will be speaking at [React Boston](http://www.reactboston.com/)! I have a simple talk about comments in source code and interesting easter eggs in famous open source repos. Wish me luck!',
+      `September 30th I spoke at [React Boston](http://www.reactboston.com/)! I had a simple talk about comments in source code and interesting easter eggs in famous open source repos. The videos from the talk are set to release soon, when they do I'll be sure to link them here!`,
   },
   {
     title: 'Community Coding Day',
