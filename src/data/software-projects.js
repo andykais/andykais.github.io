@@ -35,6 +35,17 @@ export default [
     ],
   },
   {
+    title: 'i3status-rx',
+    description:
+      'i3wm status bar written using rxjs and asynchronous shell commands. It attempts to do as little work as possible as infrequently as possible.',
+    sources: [
+      {
+        icon: FaNpm,
+        link: 'https://www.npmjs.com/package/i3status-rx',
+      },
+    ],
+  },
+  {
     title: 'Kaiser Engineering',
     description: `set of digital & LED guages running from microcontrollers that respond to a vehicle's OBD-II port. I am not the lead engineer but a prototyper for the digital gauge code written in Python 3 and OpenGL.`,
     sources: [
