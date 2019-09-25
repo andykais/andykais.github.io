@@ -1,10 +1,6 @@
-# Project dependencies
-.cache
-node_modules
+.DS_Store
+/node_modules/
+/src/node_modules/@sapper/
 yarn-error.log
-
-# Build directory
-/public
-
-# editor cruft
-.tern-port
+/cypress/screenshots/
+/__sapper__/
