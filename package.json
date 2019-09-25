@@ -4,12 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "develop": "sapper dev --hot=false",
-    "build": "sapper export"
+    "build": "NODE_ENV=production sapper export"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "compression": "^1.7.1",
+    "luxon": "^1.19.3",
     "markdown-it": "^10.0.0",
     "polka": "next",
     "sirv": "^0.4.0"
@@ -20,7 +21,6 @@
     "prettier-plugin-svelte": "^0.7.0",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
-    "svelte-awesome": "^2.2.0",
     "svelte-loader": "^2.9.0",
     "webpack": "^4.7.0"
   }

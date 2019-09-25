@@ -1,7 +1,7 @@
 <script>
   import MarkdownIt from 'markdown-it'
 
-  const md = new MarkdownIt()
+  const md = new MarkdownIt({ html: true })
   const renderFn = inputStr => md.render(inputStr)
 
   export let render = ''

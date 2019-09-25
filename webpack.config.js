@@ -69,9 +69,9 @@ module.exports = {
 		}
 	},
 
-	serviceworker: {
-		entry: config.serviceworker.entry(),
-		output: config.serviceworker.output(),
-		mode: process.env.NODE_ENV
-	}
+	// serviceworker: {
+	// 	entry: config.serviceworker.entry(),
+	// 	output: config.serviceworker.output(),
+	// 	mode: process.env.NODE_ENV
+	// }
 };
