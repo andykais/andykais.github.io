@@ -12,7 +12,6 @@
   const handleMouseEnter = e => {
     active = company
   }
-console.log({ stack })
 </script>
 
 <style>
@@ -29,6 +28,10 @@ console.log({ stack })
   .description {
     margin: 10px 0;
   }
+  .skill {
+    display: inline-block;
+    margin: 0 5px;
+  }
 </style>
 
 <div class="work-blurb" on:mouseenter={handleMouseEnter}>
@@ -36,14 +39,15 @@ console.log({ stack })
     <a href={link}>
       <h3 class="company">{company}</h3>
     </a>
-    |
-    <span>{title}</span>
+    <span>| {title}</span>
   </div>
   <div class="description">
     <Markdown render={description} />
   </div>
 
   {#each stack as skill}
-    <Icon data={skill} />
+    <span class="skill" title={skill.label}>
+      <Icon data={skill} />
+    </span>
   {/each}
 </div>

@@ -30,7 +30,7 @@
   {#each sources as source}
     <a href={source.to} title={source.to}>
       <HoverAnimate color="var(--black)">
-        <Icon data={source.icon.icon} />
+        <Icon data={source.icon} />
       </HoverAnimate>
     </a>
   {/each}

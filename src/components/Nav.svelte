@@ -54,7 +54,10 @@
       <a href="work">work</a>
     </li>
     <li>
-      <a href="software-projects">software-projects</a>
+      <a href="software-projects">software projects</a>
+    </li>
+    <li>
+      <a href="involvement">involvement</a>
     </li>
     <li>
       <a class={segment === undefined ? 'selected' : ''} href=".">home</a>

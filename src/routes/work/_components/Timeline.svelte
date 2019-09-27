@@ -2,6 +2,7 @@
   export let timeline = []
   export let active = ''
 
+  // though this var is dependent on `timelime`, it is static, so we can make it const
   const yearCompanyMap = {}
   const yearsMap = new Map()
   for (const { company, durations } of timeline) {
