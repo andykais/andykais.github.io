@@ -26,11 +26,8 @@ h4,
 h5 {
   margin: 0;
 }
-h1.stalemate-font {
+h1 {
   font-size: 4em;
-}
-h2.stalemate-font {
-  font-size: 3em;
 }
 
 /* h1, */
@@ -57,4 +54,13 @@ a {
 p {
   padding: 0;
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }

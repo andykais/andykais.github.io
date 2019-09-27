@@ -1,36 +1,46 @@
-<style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
+<script>
+  import { icons } from '../icons'
+  import Icon from '../components/Icon.svelte'
+  import HoverAnimate from '../components/HoverAnimate.svelte'
+  import Nav from '../components/Nav.svelte'
+  const creativeSpaces = [
+    {
+      source: icons.Github,
+      link: 'https://github.com/andykais'
+    },
+    {
+      source: icons.LinkedIn,
+      link: 'https://linkedin.com/in/kaisea'
+    },
+    {
+      source: icons.Flickr,
+      link: 'https://www.flickr.com/photos/andykais'
+    },
+    {
+      source: icons.Resume,
+      // links to '../static/resume.pdf'
+      link: 'resume.pdf'
     }
+  ]
+</script>
+
+<style>
+  .home-container {
+    text-align: center;
+  }
+  /* @media (min-width: 480px) { */
+  /*   h1 { */
+  /*     font-size: 4em; */
+  /*   } */
+  /* } */
+  .name {
+    font-family: Stalemate;
+    color: var(--primary);
+    white-space: pre;
+  }
+  /* TODO animate this nicely */
+  .creative-space:hover > .icon {
+    color: var(--primary);
   }
 </style>
 
@@ -38,13 +48,20 @@
   <title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<div class="home-container">
+  <h1 class="name">Andrew Kaiser</h1>
+  <Nav segment={undefined} />
+</div>
 
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
-  <strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong>
-</p>
+<ul>
+  {#each creativeSpaces as { source, link }}
+    <li>
+      <a class="creative-space" href={link}>
+        <span class="icon">
+          <Icon data={source} />
+        </span>
+        <span>{source.label}</span>
+      </a>
+    </li>
+  {/each}
+</ul>

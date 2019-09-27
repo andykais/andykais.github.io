@@ -1,7 +1,7 @@
 <script>
   import { iconTypes } from '../icons'
 
-  export let data = null
+  export let data
   if (!data) throw new Error('`data` prop is required')
 </script>
 

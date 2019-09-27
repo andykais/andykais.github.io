@@ -9,11 +9,14 @@ import {
   faReact,
   faJenkins,
   faAngular,
-  faNodeJs
+  faNodeJs,
+  faFlickr,
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
-// TODO wrap these guys in {@html svg}
+// TODO this is actually pretty inefficient since every page now has to load all the svgs (I think?)
+// we could create an export for each one
 import { default as Kubernetes } from '../static/missing-icons/kubernetes.svg'
 import { default as Redux } from '../static/missing-icons/redux.svg'
 import { default as Scala } from '../static/missing-icons/scala.svg'
@@ -33,7 +36,19 @@ const fontAwesomeIcons = [
     label: 'Link',
     icon: faLink
   },
+  {
+    label: 'Resume',
+    icon: faFileAlt
+  },
   // brands
+  {
+    label: 'Flickr',
+    icon: faFlickr
+  },
+  {
+    label: 'LinkedIn',
+    icon: faLinkedin
+  },
   {
     label: 'NPM',
     icon: faNpm
@@ -77,8 +92,7 @@ const fontAwesomeIcons = [
   {
     label: 'AngularJS',
     icon: faAngular
-  },
-
+  }
 ].map(icon => ({ ...icon, type: iconTypes.FONT_AWESOME }))
 
 const rawSvgIcons = [
@@ -113,10 +127,13 @@ const rawSvgIcons = [
   {
     label: 'MySQL',
     icon: MySql
-  },
+  }
 ].map(icon => ({ ...icon, type: iconTypes.RAW_SVG }))
 
-export const icons = [...fontAwesomeIcons, ...rawSvgIcons].reduce((acc, icon) => ({
-  ...acc,
-  [icon.label]: icon
-}), {})
+export const icons = [...fontAwesomeIcons, ...rawSvgIcons].reduce(
+  (acc, icon) => ({
+    ...acc,
+    [icon.label]: icon
+  }),
+  {}
+)

@@ -3,9 +3,7 @@
   import Icon from '../../../components/Icon.svelte'
   import Markdown from '../../../components/Markdown.svelte'
 
-  export let title = ''
-  export let description = ''
-  export let sources = []
+  export let title, description, sources
 </script>
 
 <style>

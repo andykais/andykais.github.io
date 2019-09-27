@@ -1,9 +1,8 @@
 <script>
   import Markdown from '../../../components/Markdown.svelte'
 
-  export let title = ''
-  export let position = ''
-  export let description = ''
+  export let title, description
+  export let position = null
 </script>
 
 <style>

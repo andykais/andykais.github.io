@@ -11,6 +11,6 @@
   }
 </style>
 
-<div class="animate" style={color ? `--color: ${color}` : ''}>
+<span class="animate" style={color ? `--color: ${color}` : ''}>
   <slot>we should have stuff</slot>
-</div>
+</span>

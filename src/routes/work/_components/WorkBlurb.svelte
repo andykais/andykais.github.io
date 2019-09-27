@@ -2,12 +2,7 @@
   import Icon from '../../../components/Icon.svelte'
   import Markdown from '../../../components/Markdown.svelte'
 
-  export let company = ''
-  export let title = ''
-  export let link = ''
-  export let description = ''
-  export let active = ''
-  export let stack = []
+  export let company, title, link, description, active, stack
 
   const handleMouseEnter = e => {
     active = company
@@ -16,7 +11,7 @@
 
 <style>
   .work-blurb {
-    margin-bottom: 30px
+    margin-bottom: 30px;
   }
   .company {
     font-weight: bold;
