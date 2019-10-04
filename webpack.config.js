@@ -77,6 +77,7 @@ module.exports = {
     }
   }
 
+  // service workers are disabled.
   // serviceworker: {
   // 	entry: config.serviceworker.entry(),
   // 	output: config.serviceworker.output(),
