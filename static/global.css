@@ -10,6 +10,17 @@
   --grey-dark: rgba(0, 0, 0, 0.8);
 }
 
+.transition-color {
+  transition: color 0.5s ease;
+}
+
+html,
+body {
+  height: 100%;
+}
+#sapper {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: Inconsolata, monospace, sans-serif;

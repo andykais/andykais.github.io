@@ -6,9 +6,16 @@
 </script>
 
 <style>
+  svg {
+    height: 36px;
+    width: 36px;
+  }
   .icon {
     /* font-size: 2.4em; */
-    width: 38px;
+    /* height: 36px; */
+    /* width: 36px; */
+    /* width: 100px; */
+    display: inline-block;
   }
 </style>
 

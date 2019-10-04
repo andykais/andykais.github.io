@@ -1,5 +1,4 @@
 <script>
-  import HoverAnimate from '../../../components/HoverAnimate.svelte'
   import Icon from '../../../components/Icon.svelte'
   import Markdown from '../../../components/Markdown.svelte'
 
@@ -18,18 +17,19 @@
   .description {
     margin-bottom: 30px;
   }
-  a {
+  .icon-link {
     color: var(--primary-light);
     margin: 5px;
+  }
+  .icon-link:hover {
+    color: var(--black);
   }
 </style>
 
 <div class="sources">
   {#each sources as source}
-    <a href={source.to} title={source.to}>
-      <HoverAnimate color="var(--black)">
-        <Icon data={source.icon} />
-      </HoverAnimate>
+    <a class="icon-link transition-color" href={source.to} title={source.to}>
+      <Icon data={source.icon} />
     </a>
   {/each}
 </div>

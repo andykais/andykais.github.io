@@ -1,5 +1,4 @@
 <script>
-  import HoverAnimate from '../components/HoverAnimate.svelte'
   export let segment
 
   const pages = [
@@ -13,8 +12,8 @@
   nav {
     text-align: left;
     /* display: inline-block; */
-    display:inline-flex;
-    flex-wrap:wrap;
+    display: inline-flex;
+    flex-wrap: wrap;
   }
   a {
     margin: 0 10px;
@@ -25,12 +24,18 @@
     border-top-right-radius: 3px;
     white-space: pre;
   }
+  .link:hover {
+    color: var(--primary);
+  }
+  .active {
+    background-color: var(--grey-light);
+  }
 </style>
 
 <nav>
   {#each pages as { link, text }}
-    <a href={link}>
-      <HoverAnimate color="var(--primary)">{text}</HoverAnimate>
+    <a class={segment === link ? 'active' : ''} href={link}>
+      <span class="link transition-color">{text}</span>
     </a>
   {/each}
   <span>

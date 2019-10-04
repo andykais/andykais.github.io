@@ -1,5 +1,4 @@
 <script>
-  import HoverAnimate from '../components/HoverAnimate.svelte'
   import Nav from '../components/Nav.svelte'
 
   export let segment
@@ -7,15 +6,13 @@
 </script>
 
 <style>
-  main {
-    position: relative;
-    /* max-width: 56em; */
-    /* background-color: white; */
-    padding: 2em;
+  #app-container {
+    display: grid;
+    min-height: calc(100% - 40px);
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    padding: 20px;
     margin: 0 auto;
-    box-sizing: border-box;
-  }
-  .home-link {
   }
   .header {
     display: flex;
@@ -30,19 +27,34 @@
     color: var(--primary);
     white-space: pre;
   }
+  .home-link:hover {
+    color: var(--black);
+  }
+
+  footer {
+    margin-top: 60px;
+  }
+  footer > a {
+    color: var(--primary);
+  }
 </style>
 
 {#if !routeIsIndex}
   <div class="header">
-    <h2 class="home-link">
-      <a href="/">
-        <HoverAnimate color="var(--black)">Andrew Kaiser</HoverAnimate>
-      </a>
+    <h2 class="home-link transition-color">
+      <a href="/">Andrew Kaiser</a>
     </h2>
     <Nav {segment} />
   </div>
 {/if}
 
-<main>
-  <slot />
-</main>
+<div id="app-container">
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    source code on
+    <a class="source-code-link" href="https://github.com/andykais/andykais.github.io">github</a>
+  </footer>
+</div>
