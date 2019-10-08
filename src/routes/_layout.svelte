@@ -8,7 +8,6 @@
 <style>
   #app-container {
     display: grid;
-    min-height: calc(100% - 40px);
     grid-template-rows: 1fr auto;
     justify-items: center;
     padding: 20px;
