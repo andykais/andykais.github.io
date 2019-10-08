@@ -1,5 +1,9 @@
 dependencies:
+  '@fortawesome/free-brands-svg-icons': 5.11.2
+  '@fortawesome/free-solid-svg-icons': 5.11.2
   compression: 1.7.4
+  luxon: 1.19.3
+  markdown-it: 10.0.0
   polka: 1.0.0-next.6
   sirv: 0.4.2
 devDependencies:
@@ -9,9 +13,32 @@ devDependencies:
   sapper: 0.27.9_svelte@3.12.1
   svelte: 3.12.1
   svelte-loader: 2.13.6_svelte@3.12.1
+  svg-inline-loader: 0.8.0
   webpack: 4.41.0_webpack@4.41.0
 lockfileVersion: 5.1
 packages:
+  /@fortawesome/fontawesome-common-types/0.2.25:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-3RuZPDuuPELd7RXtUqTCfed14fcny9UiPOkdr2i+cYxBoTOfQgxcDoq77fHiiHcgWuo1LoBUpvGxFF1H/y7s3Q==
+  /@fortawesome/free-brands-svg-icons/5.11.2:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.25
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-wKK5znpHiZ2S0VgOvbeAnYuzkk3H86rxWajD9PVpfBj3s/kySEWTFKh/uLPyxiTOx8Tsd0OGN4En/s9XudVHLQ==
+  /@fortawesome/free-solid-svg-icons/5.11.2:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.25
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-zBue4i0PAZJUXOmLBBvM7L0O7wmsDC8dFv9IhpW5QL4kT9xhhVUsYg/LX1+5KaukWq4/cbDcKT+RT1aRe543sg==
   /@polka/url/0.5.0:
     dev: false
     resolution:
@@ -216,6 +243,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   /arr-diff/4.0.0:
     dev: true
     engines:
@@ -294,6 +327,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
+  /big.js/3.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-+hN/Zh2D08Mx65pZ/4g5bsmNiZUuChDiQfTUQ7qJr4/kuopCr88xZsAXv6mBoZEsUI4OuGHlX59qE94K2mMW8Q==
   /big.js/5.2.2:
     dev: true
     resolution:
@@ -800,6 +837,10 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-F/7vkyTtyc/llOIn8oWclcB25KdRaiPBpZYDgJHgh/UHtpgT2p2eldQgtQnLtUvfMKPKxbRaQM/hHkvLHt1Vng==
+  /entities/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
   /errno/0.1.7:
     dependencies:
       prr: 1.0.1
@@ -1394,6 +1435,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+  /json5/0.5.1:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
   /json5/1.0.1:
     dependencies:
       minimist: 1.2.0
@@ -1429,6 +1475,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
+  /linkify-it/2.2.0:
+    dependencies:
+      uc.micro: 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==
   /load-json-file/4.0.0:
     dependencies:
       graceful-fs: 4.2.2
@@ -1446,6 +1498,15 @@ packages:
       node: '>=4.3.0 <5.0.0 || >=5.10'
     resolution:
       integrity: sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==
+  /loader-utils/0.2.17:
+    dependencies:
+      big.js: 3.2.0
+      emojis-list: 2.1.0
+      json5: 0.5.1
+      object-assign: 4.1.1
+    dev: true
+    resolution:
+      integrity: sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=
   /loader-utils/1.2.3:
     dependencies:
       big.js: 5.2.2
@@ -1475,6 +1536,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
+  /luxon/1.19.3:
+    dev: false
+    resolution:
+      integrity: sha512-YwTDjGRQC0QC9Iya2g2eKZfgEFqRId4ZoLHORQcfTMB/5xrTx427V7ZPjQJ1vzvhA2vJfG2bh1Kv8V8IFMWCUA==
   /make-dir/2.1.0:
     dependencies:
       pify: 4.0.1
@@ -1502,6 +1567,17 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
+  /markdown-it/10.0.0:
+    dependencies:
+      argparse: 1.0.10
+      entities: 2.0.0
+      linkify-it: 2.2.0
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YWOP1j7UbDNz+TumYP1kpwnP0aEa711cJjrAQrzd0UXlbJfc5aAq0F/PZHjiioqDC1NKgvIMX+o+9Bk7yuM2dg==
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.0.4
@@ -1510,6 +1586,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==
+  /mdurl/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
   /memory-fs/0.4.1:
     dependencies:
       errno: 0.1.7
@@ -2278,6 +2358,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Imf4gH+8WQmT1GvxS/x79qpmfnE6m50hyN1ucatX+7oMCgmaF8obZWCPIzSUe6+P+YmXM46lkP2pxiV2/lt9Og==
+  /simple-html-tokenizer/0.1.1:
+    dev: true
+    resolution:
+      integrity: sha1-BcLuxXn//+FFoDCsJs/qYbmA+r4=
   /sirv/0.4.2:
     dependencies:
       '@polka/url': 0.5.0
@@ -2391,6 +2475,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /ssri/6.0.1:
     dependencies:
       figgy-pudding: 3.5.1
@@ -2512,6 +2600,14 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-t29WJNjHIqfrdMcVXqIyRfgLEaNz7MihKXTpb8qHlbzvf0WyOOIhIlwIGvl6ahJ9+9CLJwz0sjhFNAmPgo8BHg==
+  /svg-inline-loader/0.8.0:
+    dependencies:
+      loader-utils: 0.2.17
+      object-assign: 4.1.1
+      simple-html-tokenizer: 0.1.1
+    dev: true
+    resolution:
+      integrity: sha512-rynplY2eXFrdNomL1FvyTFQlP+dx0WqbzHglmNtA9M4IHRC3no2aPAl3ny9lUpJzFzFMZfWRK5YIclNU+FRePA==
   /tapable/1.1.3:
     dev: true
     engines:
@@ -2615,6 +2711,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+  /uc.micro/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
   /uglify-js/3.6.0:
     dependencies:
       commander: 2.20.0
@@ -2803,7 +2903,11 @@ packages:
     resolution:
       integrity: sha512-S+Zk8DEWE6oKpV+vI3qWkaK+jSbIK86pCwe2IF/xwIpQ8jEuxpw9NyaGjmp9+BoJv5FV2piqCDcoCtStppiq2A==
 specifiers:
+  '@fortawesome/free-brands-svg-icons': ^5.11.2
+  '@fortawesome/free-solid-svg-icons': ^5.11.2
   compression: ^1.7.1
+  luxon: ^1.19.3
+  markdown-it: ^10.0.0
   npm-run-all: ^4.1.5
   polka: next
   prettier: ^1.18.2
@@ -2812,4 +2916,5 @@ specifiers:
   sirv: ^0.4.0
   svelte: ^3.0.0
   svelte-loader: ^2.9.0
+  svg-inline-loader: ^0.8.0
   webpack: ^4.7.0
