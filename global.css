@@ -20,6 +20,7 @@ body {
 }
 #sapper {
   height: 100%;
+  display: grid;
 }
 body {
   margin: 0;
