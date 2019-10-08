@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - src-svelte
+    - src
 
 env:
   TRACKING_ID: UA-73032755-1
