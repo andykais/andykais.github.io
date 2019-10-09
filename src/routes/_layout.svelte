@@ -7,6 +7,7 @@
 
 <style>
   #app-container {
+    flex-grow: 1;
     display: grid;
     grid-template-rows: 1fr auto;
     justify-items: center;
