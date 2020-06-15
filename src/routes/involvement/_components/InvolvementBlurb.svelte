@@ -16,9 +16,9 @@
   .description {
     margin: 10px 0;
   }
-  :global(.description) a {
-    color: var(--primary);
-  }
+  /* :global(.description) a { */
+  /*   color: var(--primary); */
+  /* } */
 </style>
 
 <div class="involvement-blurb">

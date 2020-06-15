@@ -7,22 +7,22 @@
     "build": "NODE_ENV=production sapper export"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "compression": "^1.7.1",
-    "luxon": "^1.19.3",
-    "markdown-it": "^10.0.0",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "compression": "^1.7.4",
+    "luxon": "^1.24.1",
     "polka": "next",
-    "sirv": "^0.4.0"
+    "sirv": "^0.4.6"
   },
   "devDependencies": {
+    "markdown-it": "^11.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
-    "prettier-plugin-svelte": "^0.7.0",
-    "sapper": "^0.27.0",
-    "svelte": "^3.0.0",
-    "svelte-loader": "^2.9.0",
-    "svg-inline-loader": "^0.8.0",
-    "webpack": "^4.7.0"
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
+    "sapper": "^0.27.13",
+    "svelte": "^3.23.0",
+    "svelte-loader": "^2.13.6",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^4.43.0"
   }
 }

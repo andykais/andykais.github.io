@@ -11,9 +11,10 @@ import {
   faAngular,
   faNodeJs,
   faFlickr,
-  faLinkedin
+  faLinkedin,
+  faArrowRightBoldCircleOutline
 } from '@fortawesome/free-brands-svg-icons'
-import { faLink, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faFileAlt, faArrowAltCircleRight, faArrowAltCircleLeft  } from '@fortawesome/free-solid-svg-icons'
 
 // TODO this is actually pretty inefficient since every page now has to load all the svgs (I think?)
 // we could create an export for each one
@@ -25,6 +26,8 @@ import { default as PostgreSql } from '../static/missing-icons/postgresql.svg'
 import { default as MongoDb } from '../static/missing-icons/mongodb.svg'
 import { default as ReactiveX } from '../static/missing-icons/reactivex.svg'
 import { default as MySql } from '../static/missing-icons/mysql.svg'
+import { default as RotateRight } from '../static/missing-icons/rotate-right.svg'
+import { default as RotateLeft } from '../static/missing-icons/rotate-left.svg'
 
 export const iconTypes = {
   FONT_AWESOME: 'FONT_AWESOME',
@@ -92,6 +95,14 @@ const fontAwesomeIcons = [
   {
     label: 'AngularJS',
     icon: faAngular
+  },
+  {
+    label: 'ArrowRight',
+    icon: faArrowAltCircleRight
+  },
+  {
+    label: 'ArrowLeft',
+    icon: faArrowAltCircleLeft
   }
 ].map(icon => ({ ...icon, type: iconTypes.FONT_AWESOME }))
 
@@ -127,6 +138,14 @@ const rawSvgIcons = [
   {
     label: 'MySQL',
     icon: MySql
+  },
+  {
+    label: 'RotateRight',
+    icon: RotateRight
+  },
+  {
+    label: 'RotateLeft',
+    icon: RotateLeft
   }
 ].map(icon => ({ ...icon, type: iconTypes.RAW_SVG }))
 

@@ -66,15 +66,12 @@
     padding: 5px 0;
   }
   .creative-space:hover > .icon {
-    /* color: var(--primary); */
-  }
-  :global(.creative-space:hover) svg {
     animation: pop 0.2s forwards;
   }
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Andrew Kaiser</title>
 </svelte:head>
 
 <div class="home-container">

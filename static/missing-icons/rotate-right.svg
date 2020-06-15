@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  version="1.1"
+  viewBox="0 0 512 512"
+  stroke="currentColor"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <path d="m256 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm-2.3008 120h64c6.6 0 12 5.4 12 12v162.02h70.898c10.7 0 16.1 12.9 8.5 20.5l-115 114.3c-4.7 4.7-12.198 4.7-16.898 0l-114.9-114.3c-7.6-7.5-2.2-20.5 8.5-20.5h70.9v-86h-107.21c-7.244 0-13.076-5.8322-13.076-13.076v-61.848c0-7.244 5.8322-13.076 13.076-13.076h118.9c0.1022-0.0026 0.20189-0.01562 0.30469-0.01562z"/>
+</svg>
