@@ -14,7 +14,7 @@ import {
   faLinkedin,
   faArrowRightBoldCircleOutline
 } from '@fortawesome/free-brands-svg-icons'
-import { faLink, faFileAlt, faArrowAltCircleRight, faArrowAltCircleLeft  } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faFileAlt, faArrowAltCircleRight, faArrowAltCircleLeft, faPaintBrush  } from '@fortawesome/free-solid-svg-icons'
 
 // TODO this is actually pretty inefficient since every page now has to load all the svgs (I think?)
 // we could create an export for each one
@@ -28,6 +28,7 @@ import { default as ReactiveX } from '../static/missing-icons/reactivex.svg'
 import { default as MySql } from '../static/missing-icons/mysql.svg'
 import { default as RotateRight } from '../static/missing-icons/rotate-right.svg'
 import { default as RotateLeft } from '../static/missing-icons/rotate-left.svg'
+import { default as Paintbrush } from '../static/missing-icons/paintbrush.svg'
 
 export const iconTypes = {
   FONT_AWESOME: 'FONT_AWESOME',
@@ -103,7 +104,7 @@ const fontAwesomeIcons = [
   {
     label: 'ArrowLeft',
     icon: faArrowAltCircleLeft
-  }
+  },
 ].map(icon => ({ ...icon, type: iconTypes.FONT_AWESOME }))
 
 const rawSvgIcons = [
@@ -146,6 +147,10 @@ const rawSvgIcons = [
   {
     label: 'RotateLeft',
     icon: RotateLeft
+  },
+  {
+    label: 'Art',
+    icon: Paintbrush
   }
 ].map(icon => ({ ...icon, type: iconTypes.RAW_SVG }))
 

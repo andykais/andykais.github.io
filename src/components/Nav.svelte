@@ -4,7 +4,8 @@
   const pages = [
     { link: 'work', text: 'work' },
     { link: 'software-projects', text: 'software projects' },
-    { link: 'involvement', text: 'involvement' }
+    { link: 'involvement', text: 'involvement' },
+
   ]
 </script>
 

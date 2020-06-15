@@ -11,28 +11,28 @@
       art: null
     },
     {
-      art: './moleskin-art/50005497848_ef7cfa53d7_o.png'
+      art: './moleskine-art/50005497848_ef7cfa53d7_o.png'
     },
     {
-      art: './moleskin-art/49202443272_8ab02f01cd_o.png'
+      art: './moleskine-art/49202443272_8ab02f01cd_o.png'
     },
     {
-      art: './moleskin-art/49202443747_051108e868_o.png'
+      art: './moleskine-art/49202443747_051108e868_o.png'
     },
     {
-      art: './moleskin-art/49202233886_4b9ed96716_o.png'
+      art: './moleskine-art/49202233886_4b9ed96716_o.png'
     },
     {
-      art: './moleskin-art/49201749563_2c4bd5a856_o.png'
+      art: './moleskine-art/49201749563_2c4bd5a856_o.png'
     },
     {
-      art: './moleskin-art/49202443027_11b354baf5_o.png'
+      art: './moleskine-art/49202443027_11b354baf5_o.png'
     },
     {
-      art: './moleskin-art/49201749408_48fef4ae51_o.png'
+      art: './moleskine-art/49201749408_48fef4ae51_o.png'
     },
     {
-      art: './moleskin-art/49202234051_80096f3af4_o.png'
+      art: './moleskine-art/49202234051_80096f3af4_o.png'
     }
   ].map((data, i) => ({
     ...data,
@@ -120,14 +120,14 @@
 </script>
 
 <style>
-  #opened-moleskin {
+  #opened-moleskine {
     width: calc(3.5in * 2);
     height: calc(3.5in * 2);
     /* height: 5.5in; */
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  #rotateable-moleskin {
+  #rotateable-moleskine {
     transform-origin: center;
     width: calc(3.5in * 2);
     height: 5.5in;
@@ -135,7 +135,7 @@
     grid-template-columns: 1fr 1fr;
     transition: transform 0.2s ease-in-out;
   }
-  #moleskin {
+  #moleskine {
     width: 3.5in;
     height: 5.5in;
 
@@ -237,7 +237,7 @@
     background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
   }
 
-  .moleskin-cover.front .content {
+  .moleskine-cover.front .content {
     background-image: url('./cardboard-opacity.png'),
       linear-gradient(
         90deg,
@@ -248,8 +248,8 @@
       );
     background-size: initial;
   }
-  .moleskin-cover.back,
-  .moleskin-back {
+  .moleskine-cover.back,
+  .moleskine-back {
     background-image: url('./cardboard-opacity.png'),
       linear-gradient(
         90deg,
@@ -336,11 +336,11 @@
   /* } */
 </style>
 
-<div id="opened-moleskin">
+<div id="opened-moleskine">
   <div
-    id="rotateable-moleskin"
+    id="rotateable-moleskine"
     style="transform: rotate({rotation}deg) translateX({rotationOffset}in)">
-    <div id="moleskin">
+    <div id="moleskine">
       {#each pages as { flipped, zIndex, xOffset, covered, art }, i}
         <!-- style="z-index:{zIndex}; left: {xOffset}px;" -->
         <div
@@ -350,7 +350,7 @@
           style="z-index:{zIndex}; width: calc(100% - {xOffset}px);"
           bind:this={pages[i].thisElement}
           id="placeholder-{i + 1}">
-          <div class="front" class:moleskin-cover={i === 0}>
+          <div class="front" class:moleskine-cover={i === 0}>
             <div class="shadow" />
             {#if i === 0}
               <div class="content" />
@@ -358,10 +358,10 @@
               <Image src={art} />
             {/if}
           </div>
-          <div class="back" class:moleskin-cover={i === pages.length - 1}>
+          <div class="back" class:moleskine-cover={i === pages.length - 1}>
             <div class="shadow" />
             {#if i === pages.length - 1}
-              <div class="content moleskin-back" />
+              <div class="content moleskine-back" />
             {:else}
               <div class="content blank-paper" />
             {/if}

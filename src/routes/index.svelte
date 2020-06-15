@@ -16,6 +16,10 @@
       link: 'https://www.flickr.com/photos/andykais'
     },
     {
+      source: icons['Art'],
+      link: 'moleskine'
+    },
+    {
       source: icons.Resume,
       // links to '../static/resume.pdf'
       link: 'resume.pdf'
