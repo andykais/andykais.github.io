@@ -111,12 +111,12 @@
   // TODO do this smarter!
   let rotationOffset = 0
   function rotateLeft() {
-    rotation += 90
+    rotation -= 90
     if (rotation % 180 === 0) rotationOffset = 0
     else rotationOffset = 0.5 // inches
   }
   function rotateRight() {
-    rotation -= 90
+    rotation += 90
     if (rotation % 180 === 0) rotationOffset = 0
     else rotationOffset = 0.5 // inches
   }
