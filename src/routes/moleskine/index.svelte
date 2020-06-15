@@ -40,6 +40,7 @@
     xOffset: 0,
     flipped: false,
     covered: false,
+    display: true,
     thisElement: null
   }))
   let pageIndex = 0
@@ -76,6 +77,7 @@
     setTimeout(() => {
       pages[pageIndex].zIndex *= -1
       pages[pageIndex].xOffset = 0
+      pages[pageIndex].display = false
       // cover the prior page
       if (pages[pageIndex - 1]) pages[pageIndex - 1].covered = true
       if (pages[pageIndex + 1]) pages[pageIndex + 1].covered = false
@@ -87,6 +89,7 @@
   function prevHalfway(pageIndex) {
     setTimeout(() => {
       pages[pageIndex].zIndex *= -1
+      pages[pageIndex].display = true
       // cover the latter page
       if (pages[pageIndex - 1]) pages[pageIndex - 1].covered = false
       if (pages[pageIndex + 1]) pages[pageIndex + 1].covered = true
@@ -341,7 +344,7 @@
     id="rotateable-moleskine"
     style="transform: rotate({rotation}deg) translateX({rotationOffset}in)">
     <div id="moleskine">
-      {#each pages as { flipped, zIndex, xOffset, covered, art }, i}
+      {#each pages as { flipped, zIndex, xOffset, covered, art, display }, i}
         <!-- style="z-index:{zIndex}; left: {xOffset}px;" -->
         <div
           class="page"
@@ -350,7 +353,7 @@
           style="z-index:{zIndex}; width: calc(100% - {xOffset}px);"
           bind:this={pages[i].thisElement}
           id="placeholder-{i + 1}">
-          <div class="front" class:moleskine-cover={i === 0}>
+          <div class="front" class:moleskine-cover={i === 0} style="display:{display ? 'grid' : 'none'}">
             <div class="shadow" />
             {#if i === 0}
               <div class="content" />
