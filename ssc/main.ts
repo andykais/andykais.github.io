@@ -50,11 +50,22 @@ class Application {
 
   async #track_request(request: Request, connection_info: Deno.ServeHandlerInfo) {
     const user_agent = request.headers.get('user-agent')
-    const unique_request_str = `${user_agent}+${connection_info.remoteAddr}`
+    const unique_request_str = `${user_agent}+${connection_info.remoteAddr.hostname}`
     const unique_request_buffer = new TextEncoder().encode(unique_request_str);
     const hash_buffer = await crypto.subtle.digest("SHA-1", unique_request_buffer);
     const hash = encodeHex(hash_buffer);
-    await this.#database.set(['telemetry', 'fingerprint', hash], 1, { expireIn: 1000 * 60 * 60 * 24 })
+    // console.log({user_agent, ip: connection_info.remoteAddr, hash})
+    const result = await this.#database.set(['telemetry', 'fingerprint', hash], 1, { expireIn: 1000 * 60 * 60 * 24 })
+    // console.log(result)
+
+    // const transaction_result = await this.#database.atomic()
+    //   .check({key: ['telemetry', 'fingerprint', 'daily', 'hashes', hash], versionstamp: null})
+    //   .set(['telemetry', 'fingerprint', 'daily', 'hashes', hash], 1)
+    //   .sum(['telemetry', 'fingerprint', 'total_count'], 1n)
+    //   .sum(['telemetry', 'fingerprint', 'daily', 'count'], 1n)
+    //   .commit()
+    // console.log(transaction_result)
+
     const fingerprint_count = await this.#count_fingerprints()
     return {unique_site_visits: fingerprint_count}
   }
