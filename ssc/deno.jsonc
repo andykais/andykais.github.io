@@ -1,6 +1,6 @@
 {
   "tasks": {
     "develop": "deno run --unstable --watch --check --allow-net=0.0.0.0:8000 main.ts",
-    "test:develop": "deno test --unstable --watch --check --allow-read=. --allow-write=. --allow-net=0.0.0.0:8000,localhost:8000 tests/main.test.ts"
+    "test:watch": "deno test --unstable --watch --check --allow-read=. --allow-write=. --allow-net=0.0.0.0:8000,localhost:8000 tests/main.test.ts"
   }
 }

@@ -1,3 +1,4 @@
+import * as datetime from 'https://deno.land/std@0.202.0/datetime/mod.ts'
 import { encodeHex } from "https://deno.land/std@0.202.0/encoding/hex.ts";
 import * as pattern from 'npm:ts-pattern@5.0.5'
 
@@ -7,6 +8,13 @@ abstract class HttpError extends Error {
 }
 class HttpNotFound extends HttpError {
   status = 404
+}
+
+interface DatabaseKeys {
+  total_count: Deno.KvKey
+  daily_count: Deno.KvKey
+  total_entries: Deno.KvKey
+  daily_entries: Deno.KvKey
 }
 
 interface ApplicationConfig {
@@ -54,28 +62,44 @@ class Application {
     const unique_request_buffer = new TextEncoder().encode(unique_request_str);
     const hash_buffer = await crypto.subtle.digest("SHA-1", unique_request_buffer);
     const hash = encodeHex(hash_buffer);
-    // console.log({user_agent, ip: connection_info.remoteAddr, hash})
-    const result = await this.#database.set(['telemetry', 'fingerprint', hash], 1, { expireIn: 1000 * 60 * 60 * 24 })
-    // console.log(result)
 
-    // const transaction_result = await this.#database.atomic()
-    //   .check({key: ['telemetry', 'fingerprint', 'daily', 'hashes', hash], versionstamp: null})
-    //   .set(['telemetry', 'fingerprint', 'daily', 'hashes', hash], 1)
-    //   .sum(['telemetry', 'fingerprint', 'total_count'], 1n)
-    //   .sum(['telemetry', 'fingerprint', 'daily', 'count'], 1n)
-    //   .commit()
-    // console.log(transaction_result)
+    const now = new Date()
+    const tomorrow = new Date()
+    tomorrow.setDate(tomorrow.getDay() + 1)
+    tomorrow.setHours(tomorrow.getHours() + 1) // add an extra hour for those weird time windows
+    const todays_date = datetime.format(now, 'yyyy-MM-dd')
+    const time_until_tomorrow = datetime.difference(now, tomorrow)
 
-    const fingerprint_count = await this.#count_fingerprints()
-    return {unique_site_visits: fingerprint_count}
+    const keys: DatabaseKeys = {
+      total_count: ['telemetry.fingerprint.total_count'],
+      daily_count: ['telemetry.fingerprint.daily_count', todays_date],
+      total_entries: ['telemetry.fingerprint.total_entries', hash],
+      daily_entries: ['telemetry.fingerprint.daily_entries', todays_date, hash],
+    }
+    const fotd_transaction_result = await this.#database.atomic()
+      .check({ key: keys.daily_count, versionstamp: null })
+      .set(keys.daily_count, new Deno.KvU64(0n), { expireIn: time_until_tomorrow.milliseconds })
+      .commit()
+
+    const total_transaction_result = await this.#database.atomic()
+      .check({ key: keys.total_entries, versionstamp: null })
+      .set(keys.total_entries, true)
+      .sum(keys.total_count, 1n)
+      .commit()
+
+    const daily_transaction_result = await this.#database.atomic()
+      .check({ key: keys.daily_entries, versionstamp: null })
+      .set(keys.daily_entries, true, { expireIn: time_until_tomorrow.milliseconds })
+      .sum(keys.daily_count, 1n)
+      .commit()
+
+    return await this.#count_fingerprints(keys, todays_date)
   }
 
-  async #count_fingerprints() {
-    let count = 0
-    for await (const value of this.#database.list({prefix: ['telemetry', 'fingerprint']})) {
-      count += 1
-    }
-    return count
+  async #count_fingerprints(keys: DatabaseKeys, todays_date: string) {
+    const [daily_count, total_count] = await this.#database.getMany([keys.daily_count, keys.total_count])
+    const [unique_site_visits_today, unique_site_visits] = [daily_count, total_count].map(bigint => Number(bigint.value))
+    return { unique_site_visits_today, unique_site_visits, todays_date }
   }
 
 }
